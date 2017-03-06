@@ -15,7 +15,8 @@ L.Control.Button = L.Control.extend({
                 button.parentNode.removeChild(button);
             } catch (e) { }
         } else if (typeof label === "string") {
-            button = L.DomUtil.create('button', this.options.className)
+            button = L.DomUtil.create('button', this.options.className);
+            button.innerHTML = label;
         } else {
             throw new Error('L.Control.Button: failed to initialize, label must either be text or a dom element');
         }
